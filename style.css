@@ -251,7 +251,13 @@ body {
 
 .project-card { min-height: 92px; }
 
-/* Alleen het menu in het nieuwe tabblad staat iets lager. */
+/* Alleen het menu in het nieuwe tabblad staat iets lager.
+   De hele pagina krijgt hetzelfde kleurverloop, dus geen wit eromheen. */
+.menu-page {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #000000 0%, #1f1f1f 38%, #7c3b1f 68%, #efa242 100%);
+}
+
 .menu-page .page-shell { transform: translateY(18px); }
 
 /* =================================================================
