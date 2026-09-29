@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sigrid Styling - Startpagina</title>
+  <link rel="stylesheet" href="sigrid-startpagina.css">
+</head>
+<body>
+  <main class="page-shell" aria-label="Startpagina Sigrid Styling">
+    <section class="content-grid">
+      <div class="left-column">
+        <article class="glass-card assignment-card">
+          <div class="pill"><span aria-hidden="true">📋</span><span>Context</span></div>
+          <p class="body-text">
+            Je gaat aan de slag voor <strong>Sigrid Styling</strong>, een start-up in de stylingbranche. Zij hebben twee werkplekken nodig en willen ook graag met een tablet kunnen werken. Jij richt de werkplekken in volgens de wensen van de medewerkers en installeert zowel Nederlandse als Engelse software.
+          </p>
+        </article>
+
+        <article class="glass-card outcome-card">
+          <div class="pill"><span aria-hidden="true">🎯</span><span>Leeruitkomst</span></div>
+          <h1 class="section-title">Wat laat jij aan het einde zien?</h1>
+          <p class="body-text">
+            Je <strong>monteert, installeert en configureert</strong> hardware en software voor een echte opdrachtgever. Daarbij zorg je voor veiligheid en privacy, een werkende netwerkaansluiting en een nette administratie. Je werkt zorgvuldig en voorkomt verspilling.
+          </p>
+          <div class="tags" aria-label="Werkprocessen">
+            <span class="tag">B1-K1-W1</span>
+            <span class="tag">B1-K1-W2</span>
+            <span class="tag">B1-K1-W3</span>
+            <span class="tag">B1-K2-W2</span>
+          </div>
+        </article>
+      </div>
+
+      <aside class="right-column" aria-label="Navigatie">
+        <div class="section-heading">Wat ga je doen?</div>
+        <div class="action-list">
+          <a class="action-card popup-link" href="https://teraa-canvas.instructure.com/courses/930/pages/sigridcomptia?module_item_id=13072" aria-label="Open CompTIA A+">
+            <div class="icon-box" aria-hidden="true">A+</div>
+            <div>
+              <h2 class="action-title">CompTIA A+</h2>
+              <p class="action-desc">Theorie over hardware, software en netwerken</p>
+            </div>
+            <div class="arrow" aria-hidden="true">→</div>
+          </a>
+
+          <a class="action-card popup-link" href="https://teraa-canvas.instructure.com/courses/930/pages/sigriddagtaken?module_item_id=13073" aria-label="Open Dagtaken">
+            <div class="icon-box" aria-hidden="true">✓</div>
+            <div>
+              <h2 class="action-title">Dagtaken</h2>
+              <p class="action-desc">Praktische opdrachten die je elke dag uitvoert</p>
+            </div>
+            <div class="arrow" aria-hidden="true">→</div>
+          </a>
+        </div>
+
+        <div class="section-heading">Afsluiting</div>
+        <a class="action-card project-card popup-link" href="https://teraa-canvas.instructure.com/courses/930/pages/comptia?module_item_id=13074" aria-label="Open Beroepsproject Sigrid Styling">
+          <div class="icon-box" aria-hidden="true">🏆</div>
+          <div>
+            <h2 class="action-title">Beroepsproject Sigrid Styling</h2>
+            <p class="action-desc">Lever je eindopdracht in en laat zien wat je kunt</p>
+          </div>
+          <div class="arrow" aria-hidden="true">→</div>
+        </a>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    // Opent de Canvas-pagina in één herbruikbaar venster van 90% van het scherm.
+    // De startpagina blijft daardoor gewoon open op de achtergrond.
+    document.querySelectorAll('.popup-link').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const width = Math.round(window.screen.availWidth * 0.90);
+        const height = Math.round(window.screen.availHeight * 0.90);
+        const left = Math.round(window.screen.availLeft + (window.screen.availWidth - width) / 2);
+        const top = Math.round(window.screen.availTop + (window.screen.availHeight - height) / 2);
+        const options = `popup=yes,width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`;
+        const popup = window.open(link.href, 'canvasPopup', options);
+
+        // Als de browser pop-ups blokkeert, werkt de link alsnog gewoon.
+        if (popup) {
+          popup.focus();
+        } else {
+          window.location.href = link.href;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
