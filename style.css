@@ -251,6 +251,9 @@ body {
 
 .project-card { min-height: 92px; }
 
+/* Alleen het menu in het nieuwe tabblad staat iets lager. */
+.menu-page .page-shell { transform: translateY(18px); }
+
 /* =================================================================
    Fotopagina: de foto opent het menu in een halfdoorzichtige popup.
    ================================================================= */
