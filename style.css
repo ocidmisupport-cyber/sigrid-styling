@@ -8,9 +8,9 @@
   --teraa-orange-dark: #D2652A;
   --ink: #101828;
   --muted: #475467;
-  --glass: rgba(255, 255, 255, 0.76);
-  --glass-strong: rgba(255, 255, 255, 0.88);
-  --glass-border: rgba(255, 255, 255, 0.52);
+  --glass: rgba(255, 238, 220, 0.64);
+  --glass-strong: rgba(255, 243, 229, 0.76);
+  --glass-border: rgba(255, 224, 194, 0.42);
   --shadow: 0 18px 46px rgba(0, 0, 0, 0.20);
   --radius-xl: 24px;
   --radius-lg: 20px;
@@ -45,9 +45,9 @@ body {
   overflow: hidden;
   border-radius: var(--radius-xl);
   background:
-    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.10) 0 16%, transparent 36%),
-    radial-gradient(circle at 84% 78%, rgba(255, 153, 110, 0.42) 0 18%, transparent 42%),
-    linear-gradient(135deg, #000000 0%, #1a0f04 28%, #D2652A 54%, var(--teraa-orange) 100%);
+    radial-gradient(circle at 18% 14%, rgba(255, 183, 118, 0.23) 0 14%, transparent 34%),
+    radial-gradient(circle at 87% 88%, rgba(239, 162, 66, 0.38) 0 19%, transparent 44%),
+    linear-gradient(160deg, #000000 0%, #1f1f1f 38%, #7c3b1f 68%, #efa242 100%);
   box-shadow: var(--shadow);
 }
 
@@ -206,7 +206,7 @@ body {
 .action-card:hover,
 .action-card:focus-visible {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.90);
+  background: rgba(255, 239, 219, 0.82);
   box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
   outline: none;
 }
@@ -217,7 +217,7 @@ body {
   display: grid;
   place-items: center;
   border-radius: 15px;
-  background: rgba(255, 250, 242, 0.92);
+  background: rgba(255, 238, 218, 0.78);
   color: var(--teraa-orange-dark);
   font-size: 22px;
   line-height: 1;
