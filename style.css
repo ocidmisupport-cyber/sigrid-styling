@@ -252,10 +252,15 @@ body {
 .project-card { min-height: 92px; }
 
 /* Alleen het menu in het nieuwe tabblad staat iets lager.
-   De hele pagina krijgt hetzelfde kleurverloop, dus geen wit eromheen. */
+   Buiten het menu: zachte antraciete achtergrond met een warme oranje gloed. */
 .menu-page {
   min-height: 100vh;
-  background: linear-gradient(160deg, #000000 0%, #1f1f1f 38%, #7c3b1f 68%, #efa242 100%);
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px 72px),
+    linear-gradient(0deg, rgba(255,255,255,0.018) 1px, transparent 1px 72px),
+    radial-gradient(ellipse at 12% 4%, rgba(239, 162, 66, 0.18), transparent 38%),
+    radial-gradient(ellipse at 88% 96%, rgba(210, 101, 42, 0.20), transparent 42%),
+    linear-gradient(145deg, #080a0d 0%, #171b1f 52%, #2c211b 100%);
 }
 
 .menu-page .page-shell { transform: translateY(18px); }
