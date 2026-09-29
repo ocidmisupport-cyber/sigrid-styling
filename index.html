@@ -8,7 +8,7 @@
 </head>
 <body class="landing-page">
   <main class="landing-shell" aria-label="Start Sigrid Styling">
-    <button class="landing-link" id="openMenu" type="button" aria-haspopup="dialog" aria-controls="menuModal">
+    <a class="landing-link" href="menu.html" target="_blank" rel="noopener" aria-label="Open het menu van Sigrid Styling in een nieuw tabblad">
       <img class="landing-photo" src="sigrid.png" alt="Sigrid werkt aan haar werkplek">
       <span class="landing-shade" aria-hidden="true"></span>
       <span class="landing-copy">
@@ -16,43 +16,7 @@
         <strong>Sigrid Styling</strong>
         <span>Klik op de foto om te beginnen <b aria-hidden="true">→</b></span>
       </span>
-    </button>
+    </a>
   </main>
-
-  <div class="page-modal" id="menuModal" aria-hidden="true">
-    <section class="page-modal__window" role="dialog" aria-modal="true" aria-label="Menu Sigrid Styling">
-      <button class="page-modal__close" id="closeMenu" type="button" aria-label="Sluit menu">×</button>
-      <iframe class="page-modal__frame" title="Menu Sigrid Styling" src="about:blank"></iframe>
-    </section>
-  </div>
-
-  <script>
-    const modal = document.getElementById('menuModal');
-    const modalFrame = modal.querySelector('.page-modal__frame');
-    const openButton = document.getElementById('openMenu');
-    const closeButton = document.getElementById('closeMenu');
-
-    function closeModal() {
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      modalFrame.src = 'about:blank';
-      openButton.focus();
-    }
-
-    openButton.addEventListener('click', () => {
-      modalFrame.src = 'menu.html';
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-      closeButton.focus();
-    });
-
-    closeButton.addEventListener('click', closeModal);
-    modal.addEventListener('click', (event) => {
-      if (event.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-    });
-  </script>
 </body>
 </html>
