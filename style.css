@@ -251,6 +251,87 @@ body {
 
 .project-card { min-height: 92px; }
 
+/* =================================================================
+   Fotopagina: de foto opent het menu in een halfdoorzichtige popup.
+   ================================================================= */
+.landing-page {
+  min-height: 100vh;
+  background: #1b120d;
+}
+
+.landing-shell {
+  width: min(1000px, 100vw);
+  height: min(500px, 100vh);
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+}
+
+.landing-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: #1b120d;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+}
+
+.landing-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.landing-link:hover .landing-photo,
+.landing-link:focus-visible .landing-photo { transform: scale(1.035); }
+
+.landing-link:focus-visible { outline: 4px solid #fff; outline-offset: -8px; }
+
+.landing-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.24) 45%, rgba(0, 0, 0, 0.04) 72%);
+}
+
+.landing-copy {
+  position: absolute;
+  left: clamp(24px, 5vw, 62px);
+  bottom: clamp(26px, 6vw, 62px);
+  display: grid;
+  gap: 8px;
+  max-width: 420px;
+  font-size: clamp(15px, 2vw, 19px);
+  font-weight: 700;
+  line-height: 1.25;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.48);
+}
+
+.landing-copy strong {
+  font-size: clamp(32px, 5vw, 58px);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.landing-kicker {
+  width: fit-content;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(210, 101, 42, 0.92);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.landing-copy b { font-size: 1.3em; }
+
 /* Op een smal scherm wordt de startpagina onder elkaar gezet. */
 @media (max-width: 760px) {
   body { overflow: auto; }
@@ -266,6 +347,14 @@ body {
     grid-template-columns: 1fr;
     height: auto;
     padding: 18px;
+  }
+
+  .landing-page { overflow: hidden; }
+
+  .landing-shell {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
   }
 }
 
@@ -545,8 +634,8 @@ body[data-page="beroepsproject"] .banner-image { width: 100%; height: 100%; obje
 body[data-page="beroepsproject"] .banner-caption { position: absolute; right: 0; bottom: 0; left: 0; padding: 6px; background: rgba(0,0,0,0.55); text-align: center; font-size: 12px; }
 
 @media (max-width: 760px) {
-  .page-modal { padding: 2vh 2vw; }
-  .page-modal__window { width: 96vw; height: 96vh; border-radius: 14px; }
+  .page-modal { padding: 5vh 5vw; }
+  .page-modal__window { width: 90vw; height: 90vh; border-radius: 14px; }
   body[data-page] .banner { height: 31%; }
   body[data-page] .tab-page { height: 69%; }
   body[data-page] .tab-menu { flex-basis: 29%; width: 29%; }
